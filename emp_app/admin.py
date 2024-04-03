@@ -12,3 +12,4 @@ class RoleAdmin(admin.ModelAdmin):
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('id','first_name','last_name','dept','salary','bonus','role','phone',)
+    change_form_template = 'change_form.html'

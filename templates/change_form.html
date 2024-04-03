@@ -1,0 +1,60 @@
+{% extends 'admin/change_form.html' %}{# due to csrf issue #}
+{% csrf_token %}
+
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+    {{ block.super }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+  <script>
+        // Wait for the document to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply input mask for phone number
+            $('#id_cnic').mask('00000-0000000-0');
+
+            {#// Apply input mask for date#}
+            {#$('#date').mask('99/99/9999');#}
+
+            $('#id_phone').mask ('(00) 0000000000')
+            var my = document.getElementById("id_phone");
+            my.placeholder = "(00) 000-0000000";
+        
+            
+              $('#id_contact_number').mask ('(00) 0000000000')
+            var input = document.getElementById("id_contact_number");
+            input.placeholder = "(00) 000-0000000";
+            
+            $('#id_alternate_contact').mask ('(00) 0000000000')
+            var input2 = document.getElementById("id_alternate_contact");
+            input2.placeholder = "(00) 000-0000000";
+
+
+            var input3 = document.getElementById("id_email");
+            input3.placeholder = "abcd@abc.com";
+
+             var input4 = document.getElementById("id_present_address");
+            input4.placeholder = "123 Main Street Anytown, USA12345";
+
+            var input5 = document.getElementById("id_permanent_address");
+            input5.placeholder = "123 Main Street Anytown, USA12345";
+
+            var input6 = document.getElementById("id_date_of_birth");
+            input6.placeholder = "2024-04-02";
+
+            var input7 = document.getElementById("id_cnic");
+            input7.placeholder = "12345-6789012-3";
+            
+            var input8 = document.getElementById("id_full_name");
+            input8.placeholder = "Alice Johnson";
+            
+            {#var input9 = document.getElementById("id_clock_in_1");#}
+            {#inpute9.#}
+
+            
+            
+        });
+    </script>
+{% endblock %}
